@@ -1,0 +1,157 @@
+/* Specific receipt styles to match image_9a394a.png */
+.receipt-container {
+    background: white;
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+/* Simple jagged edge simulation */
+.receipt-container::before, .receipt-container::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; height: 10px;
+    background-size: 20px 20px;
+    background-repeat: repeat-x;
+}
+.receipt-container::before {
+    top: -10px;
+    background-image: linear-gradient(45deg, transparent 33.33%, white 33.33%, white 66.66%, transparent 66.66%), 
+                        linear-gradient(-45deg, transparent 33.33%, white 33.33%, white 66.66%, transparent 66.66%);
+}
+.receipt-container::after {
+    bottom: -10px;
+    background-image: linear-gradient(135deg, transparent 33.33%, white 33.33%, white 66.66%, transparent 66.66%), 
+                        linear-gradient(-135deg, transparent 33.33%, white 33.33%, white 66.66%, transparent 66.66%);
+}
+
+.receipt-container hr { border: none; border-top: 1px dashed #ccc; margin: 15px 0; }
+.total-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+table th, table td { padding: 8px 0; }
+
+.receipt-header { text-align: center; margin-bottom: 20px; }
+
+.receipt-status {
+    font-weight: 700;
+}
+
+.receipt-status.status-on-process {
+    color: #d99400;
+}
+
+.receipt-status.status-completed {
+    color: #087f3f;
+}
+
+.receipt-status.status-canceled {
+    color: #c62828;
+}
+
+.pickup-fee-row > span:last-child {
+    display: none;
+}
+
+.pickup-receipt-details {
+    display: block;
+    margin-top: 8px;
+    color: #777;
+    font-size: 0.8rem;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.pickup-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pickup-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.pickup-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(90%, 440px);
+    padding: 28px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pickup-dialog h2 {
+    margin: 0 0 24px;
+    color: #087f3f;
+    text-align: center;
+    font-size: 38px;
+}
+
+.pickup-dialog label {
+    display: block;
+    margin: 12px 0 6px;
+    color: #222;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.pickup-dialog input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 44px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 8px;
+    background: #e9e9e9;
+    color: #222;
+    font-size: 15px;
+}
+
+.pickup-dialog input:focus {
+    outline: 2px solid #f6a01a;
+}
+
+.pickup-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.pickup-note {
+    margin: 18px 0 0;
+    color: #e98d00;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.pickup-confirm {
+    width: 100%;
+    height: 50px;
+    margin-top: 22px;
+    border: 0;
+    border-radius: 8px;
+    background: #f6a01a;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .pickup-dialog {
+        padding: 22px;
+    }
+
+    .pickup-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+.barcode { width: 100%; margin-top: 20px; }
