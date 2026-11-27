@@ -6,8 +6,8 @@
 
     // Mailtrap Email Sandbox settings.
     // Replace these placeholders locally; do not commit the token publicly.
-    define("MAILTRAP_API_TOKEN", "03e05f729c0b6137705af8a2952e9ca8");
-    define("MAILTRAP_INBOX_ID", "5042024");
+    define("MAILTRAP_API_TOKEN", "insert_here");
+    define("MAILTRAP_INBOX_ID", "insert_here");
     define("MAILTRAP_FROM_EMAIL", "fizzandbits@example.com");
     define("MAILTRAP_FROM_NAME", "Fizz & Bits");
 
